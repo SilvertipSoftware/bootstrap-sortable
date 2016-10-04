@@ -55,8 +55,11 @@
 
         emptyEnd = options.emptyEnd;
 
+        // use a different root to find the tables
+        var $root = !options.root ? $document : options.root;
+
         // Set attributes needed for sorting
-        $('table.sortable').each(function () {
+        $root.find('table.sortable').each(function () {
             var $this = $(this);
             var applyLast = (options.applyLast === true);
             $this.find('span.sign').remove();
